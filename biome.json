@@ -1,8 +1,25 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.5.8/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!dist"]
+    "includes": [
+      "**",
+      "!node_modules",
+      "!.next",
+      "!dist",
+      "!build",
+      "!./app/app.css"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -11,7 +28,28 @@
   },
   "linter": {
     "enabled": true,
-    "rules": { "preset": "recommended" }
+    "rules": {
+      "a11y": {
+        "useKeyWithClickEvents": "info",
+        "noStaticElementInteractions": "info",
+        "noSvgWithoutTitle": "off"
+      },
+      "correctness": {
+        "useExhaustiveDependencies": "info",
+        "noEmptyPattern": "info"
+      },
+      "style": {
+        "noNonNullAssertion": "info"
+      },
+      "suspicious": {
+        "noUnknownAtRules": "off",
+        "noArrayIndexKey": "off"
+      }
+    },
+    "preset": "recommended",
+    "domains": {
+      "react": "recommended"
+    }
   },
   "assist": {
     "actions": {
