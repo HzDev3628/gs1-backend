@@ -1,0 +1,6 @@
+project_id = "acme-data-room"
+
+# Declarative-schema workflow: this file is the only database source of truth.
+# `supabase db diff -f <name>` turns changes in it into an incremental migration.
+[db.migrations]
+schema_paths = ["./schema.sql"]
